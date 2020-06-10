@@ -4,16 +4,16 @@ services:
   - docker
 
 before_install:
-  - docker build -t katha/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t katharinad/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true katha/react-test npm test
+  - docker run -e CI=true katharinad/react-test npm test
 
 after_success:
-  - docker build -t katha/multi-client ./client
-  - docker build -t katha/multi-nginx ./nginx
-  - docker build -t katha/multi-server ./server
-  - docker build -t katha/multi-worker ./worker
+  - docker build -t katharinad/multi-client ./client
+  - docker build -t katharinad/multi-nginx ./nginx
+  - docker build -t katharinad/multi-server ./server
+  - docker build -t katharinad/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push katha/multi-client 
   - docker push katha/multi-nginx
