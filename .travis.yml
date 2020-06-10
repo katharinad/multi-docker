@@ -15,7 +15,7 @@ after_success:
   - docker build -t katharinad/multi-server ./server
   - docker build -t katharinad/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push katha/multi-client 
-  - docker push katha/multi-nginx
-  - docker push katha/multi-server
-  - docker push katha/multi-worker
+  - docker push katharinad/multi-client 
+  - docker push katharinad/multi-nginx
+  - docker push katharinad/multi-server
+  - docker push katharinad/multi-worker
