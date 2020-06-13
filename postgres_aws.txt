@@ -1,0 +1,4 @@
+username: postgres
+password: postgrespw
+databasename: fibvalues
+new vpc security group: multi-docker-sec-group
